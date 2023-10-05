@@ -1,10 +1,12 @@
 
 const express = require('express');
 
+const users = require('./users')
+
 const app = express();
 
-app.get('/', (req, res) =>{
-    res.send('<h1>Hello World</h1>')
+app.get('/api/users', (req, res) =>{
+    res.json(users)
 })
 
 const port = process.env.port || 5000;
